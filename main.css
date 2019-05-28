@@ -12,15 +12,15 @@ html,body {
       grid-template-columns: 50vw 50vw;
     -ms-grid-rows: 100px 400px 100px;
       grid-template-rows: 100px 400px 100px;
-      grid-template-areas:  "header header" 
+      grid-template-areas:  "headerpage headerpage" 
                             "businessHours openClosed"
                             "footer footer";
 }
 
-.header {
+.headerpage {
     -ms-grid-column: 1 / span 2;
     -ms-grid-row: 1;
-    grid-area: header;  
+    grid-area: headerpage;  
 }
 
 
@@ -41,3 +41,58 @@ html,body {
     -ms-grid-row: 3;
     grid-area: footer;  
 }
+
+.openinghours, .openinghours2 {
+  font-family:Lucida Console;
+  margin:10px;
+  padding:0 10px 0 10px;
+  overflow: hidden;
+  display: inline-block;
+}
+.openinghourscontent {
+  float:left;
+}
+.openinghourscontent h2 {
+  display:block;
+  text-align:center;
+  margin-top:.33em;
+}
+.openinghourscontent button {
+  color:white;
+  font-family:Courier New;
+  font-size:large;
+  font-weight:bolder;
+  background-color:#4679BD;
+  border-radius:4px;
+  width:100%;
+  margin-bottom:10px;
+}
+.today {
+  color: #8AC007;
+}
+.opening-hours-table tr td:first-child {
+  font-weight:bold;
+}
+#open-status {
+  display:block;
+  margin-top:-1em;
+  text-align:center;
+}
+.openorclosed:after {
+  content:" open during these hours:";
+}
+.open {
+  color:green;
+}
+.open:after {
+  content:" Open";
+  color: #6C0;
+}
+.closed:after {
+  content:" Closed";
+  color: red;
+}
+.opening-hours-table tr td {
+  padding:5px;
+}
+

@@ -10,32 +10,145 @@
 <body>
 
     <div class="container">
-        <div class="header">
+        <div class="headerpage">
             <h1 class="titel">Titel</h1>
         </div>
         <div class="businessHours">
-            <h2 class="titel">Business Hours</h2>
-            <p>sffffffffffffffffffffffffffffffffffffffffq
-                fqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
-                qffffffffffffffffffffffffffffffffffffff
-                fqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
-                qffffffffffffffffffffffffffffffffffffffff
-                fqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
-                sfffffffffffffffffffffffffffffffffffffffffffq
-            </p>
+            <section class="openinghours">
+                <div class="openinghourscontent section">
+                         <h2>Opening hours</h2>
+                    <table class="opening-hours-table">
+                        <tr id="Monday" itemprop="openingHours" title="Open Monday at 9am to 6pm">
+                            <td>Monday</td>
+                            <td class="opens">09:00</td>
+                            <td>-</td>
+                            <td class="closes">18:00</td>
+                        </tr>
+                        <tr id="Tuesday" itemprop="openingHours" title="Open Tuesday at 9am to 6pm">
+                            <td>Tuesday</td>
+                            <td class="opens">09:00</td>
+                            <td>-</td>
+                            <td class="closes">18:00</td>
+                        </tr>
+                        <tr id="Wednesday" itemprop="openingHours" title="Open Wednesday at 9am to 6pm">
+                            <td>Wednesday</td>
+                            <td class="opens">09:00</td>
+                            <td>-</td>
+                            <td class="closes">18:00</td>
+                        </tr>
+                        <tr id="Thursday" itemprop="openingHours" title="Open Thursday at 9am to 8pm">
+                            <td>Thursday</td>
+                            <td class="opens">09:00</td>
+                            <td>-</td>
+                            <td class="closes">20:00</td>
+                        </tr>
+                        <tr id="Friday" itemprop="openingHours" title="Open Friday at 9am to 6pm">
+                            <td>Friday</td>
+                            <td class="opens">09:00</td>
+                            <td>-</td>
+                            <td class="closes">18:00</td>
+                        </tr>
+                        <tr id="Saturday" itemprop="openingHours" title="Open Saturday at 10am to 6pm">
+                            <td>Saturday</td>
+                            <td class="opens">10:00</td>
+                            <td>-</td>
+                            <td class="closes">18:00</td>
+                        </tr>
+                        <tr id="Sunday" itemprop="openingHours" title="Open Sunday at 11am to 4pm">
+                            <td>Sunday</td>
+                            <td class="opens">11:00</td>
+                            <td>-</td>
+                            <td class="closes">16:00</td>
+                        </tr>
+                    </table>
+                </div>
+        </section>
         </div>
-        <div class="openclosed">
-            <h2 class="titel">Open/Closed</h2>
-            <p>fqqqqqqqsssssssssssssssssssssssssssssssssssssss
-                sfffffffffffffffffffffffffffffffffffffffffffqsf
-                sfffffffffffffffffffffffffffffffffffffffffffffffsf
-                sfffffffffffffffffffffffffffffffffffffffffffffffsf
-                sffffffffffffffffffffffffffffffffffffffffffffffs
-            </p>
+
+        <div class="openClosed">
+            <section class="openinghours2">
+                <div class="openinghourscontent2 section">
+            <h2>Opening hours</h2>
+            <span id="open-status"><small class="openorclosed">We are</small></span>
+                <canvas id="clock" width="300" height="300"
+            style="background-color:#333"></canvas>
+                </div>
+            </section>
         </div>
+        
         <div class="footer">
             <h2 class="titel">Footer</h2>
         </div>
     </div>
+<script>
+    var currentDate = new Date();
+    var weekday = [];
+    weekday[0] = "Sunday";
+    weekday[1] = "Monday";
+    weekday[2] = "Tuesday";
+    weekday[3] = "Wednesday";
+    weekday[4] = "Thursday";
+    weekday[5] = "Friday";
+    weekday[6] = "Saturday";
+    
+    var currentDay = weekday[currentDate.getDay()];
+    
+    var currentTimeHours = currentDate.getHours();
+    currentTimeHours = currentTimeHours < 10 ? "0" + currentTimeHours : currentTimeHours;
+    var currentTimeMinutes = currentDate.getMinutes();
+    var timeNow = currentTimeHours + "" + currentTimeMinutes;
+    
+    var currentDayID = "#" + currentDay; //gets todays weekday and turns it into id
+    $(currentDayID).toggleClass("today"); //this works at hightlighting today
+    
+    var openTimeSplit = $(currentDayID).children('.opens').text().split(":");
+    
+    var openTimeHours = openTimeSplit[0];
+    openTimeHours = openTimeHours < 10 ? "0" + openTimeHours : openTimeHours;
+    
+    var openTimeMinutes = openTimeSplit[1];
+    var openTimex = openTimeSplit[0] + openTimeSplit[1];
+    
+    var closeTimeSplit = $(currentDayID).children('.closes').text().split(":");
+    
+    var closeTimeHours = closeTimeSplit[0];
+    closeTimeHours = closeTimeHours < 10 ? "0" + closeTimeHours : closeTimeHours;
+    
+    var closeTimeMinutes = closeTimeSplit[1];
+    var closeTimex = closeTimeSplit[0] + closeTimeSplit[1];
+    
+    if (timeNow >= openTimex && timeNow <= closeTimex) {
+        $(".openorclosed").toggleClass("open");
+    } else {
+        $(".openorclosed").toggleClass("closed");
+    } 
+
+    (function(e, t, n, r) {
+        if (e) return;
+        t._appt = true;
+        var i = n.createElement(r),
+            s = n.getElementsByTagName(r)[0];
+        i.async = true;
+        i.src = '//dje0x8zlxc38k.cloudfront.net/loaders/s-min.js';
+        s.parentNode.insertBefore(i, s)
+    })(window._appt, window, document, "script")
+
+    function startTime() {
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('txt').innerHTML =
+        h + ":" + m + ":" + s;
+        var t = setTimeout(startTime, 500);
+      }
+      function checkTime(i) {
+        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+        return i;
+      }
+
+</script>
 </body>
 </html>
