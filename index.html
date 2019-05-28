@@ -79,6 +79,10 @@
             <h2 class="titel"></h2>
         </div>
     </div>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
 <script>
     var currentDate = new Date();
     var weekday = [];
@@ -121,16 +125,6 @@
     } else {
         $(".openorclosed").toggleClass("closed");
     } 
-
-    (function(e, t, n, r) {
-        if (e) return;
-        t._appt = true;
-        var i = n.createElement(r),
-            s = n.getElementsByTagName(r)[0];
-        i.async = true;
-        i.src = '//dje0x8zlxc38k.cloudfront.net/loaders/s-min.js';
-        s.parentNode.insertBefore(i, s)
-    })(window._appt, window, document, "script")
 
     function startTime() {
         var today = new Date();

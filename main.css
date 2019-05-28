@@ -10,18 +10,18 @@ html,body {
     text-align: center;
     position: absolute;
     color: #3b3716;
+    font-size: 20px;
   }
 
 .container {
     display: grid;
     display: -ms-grid;
-    grid-gap: 10px;
     -ms-grid-columns: 50vw 50vw;
       grid-template-columns: 50vw 50vw;
     -ms-grid-rows: 50px 400px 50px;
       grid-template-rows: 100px 400px 100px;
       grid-template-areas:  "headerpage headerpage" 
-                            "businessHours openClosed"
+                            "openClosed businessHours"
                             "footer footer";
 }
 
@@ -39,7 +39,7 @@ html,body {
 
 
 .businessHours {
-        -ms-grid-column: 1 / span 1;
+        -ms-grid-column: 2 / span 1;
         -ms-grid-row: 2;
         grid-area: businessHours; 
         margin-top: -35px;
@@ -48,11 +48,12 @@ html,body {
 }
 
 .openClosed {
-    -ms-grid-column: 2 / span 1;
+    -ms-grid-column: 1 / span 1;
     -ms-grid-row: 2;
     grid-area: openClosed;
     margin-top: -35px;
     padding-right: 80px;
+    font-size: 20px;
 }
 
 .footer {
