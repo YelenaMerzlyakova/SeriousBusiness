@@ -1,0 +1,43 @@
+html,body {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+  }
+
+.container {
+    display: grid;
+    display: -ms-grid;
+    grid-gap: 10px;
+    -ms-grid-columns: 50vw 50vw;
+      grid-template-columns: 50vw 50vw;
+    -ms-grid-rows: 100px 400px 100px;
+      grid-template-rows: 100px 400px 100px;
+      grid-template-areas:  "header header" 
+                            "businessHours openClosed"
+                            "footer footer";
+}
+
+.header {
+    -ms-grid-column: 1 / span 2;
+    -ms-grid-row: 1;
+    grid-area: header;  
+}
+
+
+.businessHours {
+        -ms-grid-column: 1 / span 1;
+        -ms-grid-row: 2;
+        grid-area: businessHours;  
+}
+
+.openClosed {
+    -ms-grid-column: 2 / span 1;
+    -ms-grid-row: 2;
+    grid-area: openClosed;
+}
+
+.footer {
+    -ms-grid-column: 1 / span 2;
+    -ms-grid-row: 3;
+    grid-area: footer;  
+}
