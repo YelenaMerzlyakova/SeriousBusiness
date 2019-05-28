@@ -2,6 +2,14 @@ html,body {
     height: 100%;
     width: 100%;
     text-align: center;
+    background: url(https://images.pexels.com/photos/1166644/pexels-photo-1166644.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    color: #3b3716;
   }
 
 .container {
@@ -10,7 +18,7 @@ html,body {
     grid-gap: 10px;
     -ms-grid-columns: 50vw 50vw;
       grid-template-columns: 50vw 50vw;
-    -ms-grid-rows: 100px 400px 100px;
+    -ms-grid-rows: 50px 400px 50px;
       grid-template-rows: 100px 400px 100px;
       grid-template-areas:  "headerpage headerpage" 
                             "businessHours openClosed"
@@ -20,26 +28,41 @@ html,body {
 .headerpage {
     -ms-grid-column: 1 / span 2;
     -ms-grid-row: 1;
-    grid-area: headerpage;  
+    grid-area: headerpage;
+    background: url();
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    width: 100vw;
+    height: 50px;
 }
 
 
 .businessHours {
         -ms-grid-column: 1 / span 1;
         -ms-grid-row: 2;
-        grid-area: businessHours;  
+        grid-area: businessHours; 
+        margin-top: -35px;
+        align-content: justify;
+        padding-left: 100px;
 }
 
 .openClosed {
     -ms-grid-column: 2 / span 1;
     -ms-grid-row: 2;
     grid-area: openClosed;
+    margin-top: -35px;
+    padding-right: 80px;
 }
 
 .footer {
     -ms-grid-column: 1 / span 2;
     -ms-grid-row: 3;
     grid-area: footer;  
+}
+
+td {
+  text-align: left;
 }
 
 .openinghours, .openinghours2 {
@@ -57,6 +80,13 @@ html,body {
   text-align:center;
   margin-top:.33em;
 }
+
+.openinghourscontent2 h2 {
+  display:block;
+  text-align:center;
+  margin-top:.33em;
+}
+
 .openinghourscontent button {
   color:white;
   font-family:Courier New;
@@ -75,11 +105,12 @@ html,body {
 }
 #open-status {
   display:block;
-  margin-top:-1em;
   text-align:center;
+  font-weight: bold;
 }
 .openorclosed:after {
-  content:" open during these hours:";
+  content:" CLOSED";
+  font-size: 
 }
 .open {
   color:green;
@@ -96,3 +127,10 @@ html,body {
   padding:5px;
 }
 
+
+canvas {
+  width: 200px;
+  height: 200px;
+  background-color: #3b3716;
+  block-size: 200px;
+}
