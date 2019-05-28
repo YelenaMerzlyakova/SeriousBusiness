@@ -45,6 +45,7 @@ html,body {
         align-content: justify;
         padding-left: 100px;
         margin-top: 4%;
+        margin-right: 30%;
 }
 
 .openClosed {
@@ -53,7 +54,8 @@ html,body {
     grid-area: openClosed;
     font-size: 20px;
     text-align: center;
-    align-content: right;
+    align-content: center;
+    margin-left: 25%;
 }
 
 .footer {
@@ -82,10 +84,15 @@ td {
   margin-top:.33em;
 }
 
-.openinghourscontent2 h2 {
-  display:block;
-  text-align:center;
-  margin-top:.33em;
+
+button {
+  background-color: #3b3716;
+  color: #d2691e;
+  padding: 15px 30px;
+  border-radius: 30px;
+  border: 2px solid #3b3716;
+  font-size: 15px;
+  margin-left: 8%;
 }
 
 
@@ -101,6 +108,7 @@ td {
   font-weight: bold;
   font-size: 40px;
   margin-top: 10%;
+  margin-left: 5%;
 }
 .openorclosed:after {
   content:" CLOSED";
@@ -115,7 +123,7 @@ td {
 }
 .closed:after {
   content:" Closed";
-  color: red;
+  color: #d2691e;
 }
 .opening-hours-table tr td {
   padding:5px;
@@ -130,6 +138,6 @@ td {
   letter-spacing: 7px;
   display: inline-block;
   margin-top: 10%;
-  margin-left: 35%;
+  margin-left: 50%;
   text-align: center;
 }
