@@ -87,17 +87,18 @@ td {
 
 button {
   background-color: #3b3716;
-  color: #d2691e;
+  color: #b85b1a;
   padding: 15px 30px;
   border-radius: 30px;
   border: 2px solid #3b3716;
   font-size: 15px;
-  margin-left: 8%;
+  margin-left: 6%;
+  margin-top: 5%;
 }
 
 
 .today {
-  color: #17273B;
+  color: #b85b1a;
 }
 .opening-hours-table tr td:first-child {
   font-weight:bold;
@@ -109,21 +110,27 @@ button {
   font-size: 40px;
   margin-top: 10%;
   margin-left: 5%;
+  color: #3b3716;
 }
+
+.openorclosed {
+  color: #3b3716;
+}
+
 .openorclosed:after {
   content:" CLOSED";
   font-size: 40px;
 }
 .open {
-  color:#17273B;
+  color:#b85b1a;
 }
 .open:after {
   content:" Open";
-  color: #17273B;
+  color: #b85b1a;
 }
 .closed:after {
   content:" Closed";
-  color: #d2691e;
+  color: #b85b1a;
 }
 .opening-hours-table tr td {
   padding:5px;
@@ -133,11 +140,11 @@ button {
 .clock {
   transform: translateX(-50%) translateY(-50%);
   color: #3b3716;
-  font-size: 40px;
+  font-size: 20px;
   font-family: Orbitron;
   letter-spacing: 7px;
   display: inline-block;
   margin-top: 10%;
-  margin-left: 50%;
+  margin-left: 45%;
   text-align: center;
 }
