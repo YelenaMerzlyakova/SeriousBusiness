@@ -68,10 +68,10 @@
         <div class="openClosed">
             <section class="openinghours2">
                 <div class="openinghourscontent2 section">
-            <h2></h2>
-            <span id="open-status"><small class="openorclosed">We are</small></span>
-                <canvas id="clock"></canvas>
-                </div>
+                <h2></h2>
+                <div><span id="open-status"><small class="openorclosed">We are</small></span></div>
+                <div id="MyClockDisplay" class="clock" onload="showTime()"></div></div>
+                <button class="closeEarly">Close early</button>
             </section>
         </div>
         
@@ -79,6 +79,10 @@
             <h2 class="titel"></h2>
         </div>
     </div>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
 <script>
     var currentDate = new Date();
     var weekday = [];
@@ -122,16 +126,6 @@
         $(".openorclosed").toggleClass("closed");
     } 
 
-    (function(e, t, n, r) {
-        if (e) return;
-        t._appt = true;
-        var i = n.createElement(r),
-            s = n.getElementsByTagName(r)[0];
-        i.async = true;
-        i.src = '//dje0x8zlxc38k.cloudfront.net/loaders/s-min.js';
-        s.parentNode.insertBefore(i, s)
-    })(window._appt, window, document, "script")
-
     function startTime() {
         var today = new Date();
         var h = today.getHours();
@@ -148,6 +142,35 @@
         return i;
       }
 
+    function showTime(){
+    var date = new Date();
+    var h = date.getHours(); // 0 - 23
+    var m = date.getMinutes(); // 0 - 59
+    var s = date.getSeconds(); // 0 - 59
+    var session = "AM";
+    
+    if(h == 0){
+        h = 12;
+    }
+    
+    if(h > 12){
+        h = h - 12;
+        session = "PM";
+    }
+    
+    h = (h < 10) ? "0" + h : h;
+    m = (m < 10) ? "0" + m : m;
+    s = (s < 10) ? "0" + s : s;
+    
+    var time = h + ":" + m + ":" + s + " " + session;
+    document.getElementById("MyClockDisplay").innerText = time;
+    document.getElementById("MyClockDisplay").textContent = time;
+    
+    setTimeout(showTime, 1000);
+    
+}
+
+showTime();
 </script>
 </body>
 </html>
