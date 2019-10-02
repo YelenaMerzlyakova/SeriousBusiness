@@ -19,8 +19,8 @@ Learn how to use if statements and combine them
 
 
 ## BONUS Objectives to ADD! 
-- [] Add a button "Close early"
-- [] When you click this button, the current day's business hours end at the current time in the table
+- [ ] Add a button "Close early"
+- [ ] When you click this button, the current day's business hours end at the current time in the table
 
 
 ## Result 
