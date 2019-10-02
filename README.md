@@ -14,6 +14,15 @@ Learn how to use if statements and combine them
 ## BONUS Objective
 
 - [X] Add a live updating clock of the current time (digital)
+
+
+## BONUS Objectives to ADD! 
 - [X] Add a button "Close early"
 - [X] When you click this button, the current day's business hours end at the current time in the table
+
+
+## Result 
+
+![]()
+![]()
 
