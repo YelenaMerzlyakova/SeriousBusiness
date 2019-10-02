@@ -1,4 +1,6 @@
-# SeriousBusiness
+# [SeriousBusiness]()
+
+First real Javascript/Jquery exercise.
 
 ## Objectives
 
@@ -17,12 +19,15 @@ Learn how to use if statements and combine them
 
 
 ## BONUS Objectives to ADD! 
-- [X] Add a button "Close early"
-- [X] When you click this button, the current day's business hours end at the current time in the table
+- [] Add a button "Close early"
+- [] When you click this button, the current day's business hours end at the current time in the table
 
 
 ## Result 
 
-![]()
-![]()
+![page](https://github.com/YelenaMerzlyakova/SeriousBusiness/blob/master/business.png)
+
+
+## Code 
+
 
