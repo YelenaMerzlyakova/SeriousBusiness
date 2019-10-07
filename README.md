@@ -15,7 +15,7 @@ Learn how to use if statements and combine them
 
 ## BONUS Objective
 
-- [X] Add a live updating clock of the current time (digital)
+- [X] Add a live updating clock of the current time (digital) :clock9:
 
 
 ## BONUS Objectives to ADD! 
